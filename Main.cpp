@@ -1073,7 +1073,7 @@ ostream& operator<<(ostream& out, const Matrix3D& m) {
 // =====================================================
 // MENUS
 // =====================================================
-void menuTask1() {
+void menu_Task1() {
     int choice;
 
     do {
@@ -1162,7 +1162,7 @@ void menuTask1() {
     } while (choice != 0);
 }
 
-void menuTask2() {
+void menu_Task2() {
     PersonEmailMap directory;
     int choice;
     string email;
@@ -1209,7 +1209,7 @@ void menuTask2() {
     } while (choice != 0);
 }
 
-void menuTask3() {
+void menu_Task3() {
     int choice;
 
     do {

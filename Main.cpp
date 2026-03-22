@@ -2,9 +2,7 @@
 #include <string>
 using namespace std;
 
-// =========================
 // Завдання 1. Клас VectorLong
-// =========================
 class VectorLong {
 private:
     long* data;
@@ -12,7 +10,6 @@ private:
     int codeError;
 
 public:
-    // Конструктор без параметрів
     VectorLong() {
         size = 1;
         data = new long[size];
@@ -20,7 +17,6 @@ public:
         codeError = 0;
     }
 
-    // Конструктор з одним параметром
     VectorLong(int n) {
         if (n <= 0) {
             size = 1;
@@ -37,7 +33,6 @@ public:
         }
     }
 
-    // Конструктор з двома параметрами
     VectorLong(int n, long value) {
         if (n <= 0) {
             size = 1;
@@ -54,7 +49,6 @@ public:
         }
     }
 
-    // Конструктор копіювання
     VectorLong(const VectorLong& other) {
         size = other.size;
         codeError = other.codeError;
@@ -64,7 +58,6 @@ public:
         }
     }
 
-    // Оператор присвоєння
     VectorLong& operator=(const VectorLong& other) {
         if (this != &other) {
             delete[] data;
@@ -78,12 +71,10 @@ public:
         return *this;
     }
 
-    // Деструктор
     ~VectorLong() {
         delete[] data;
     }
 
-    // Префіксний ++
     VectorLong& operator++() {
         for (int i = 0; i < size; i++) {
             ++data[i];
@@ -91,7 +82,6 @@ public:
         return *this;
     }
 
-    // Постфіксний ++
     VectorLong operator++(int) {
         VectorLong temp(*this);
         for (int i = 0; i < size; i++) {
@@ -100,7 +90,6 @@ public:
         return temp;
     }
 
-    // Префіксний --
     VectorLong& operator--() {
         for (int i = 0; i < size; i++) {
             --data[i];
@@ -108,7 +97,6 @@ public:
         return *this;
     }
 
-    // Постфіксний --
     VectorLong operator--(int) {
         VectorLong temp(*this);
         for (int i = 0; i < size; i++) {
@@ -117,7 +105,6 @@ public:
         return temp;
     }
 
-    // Логічне !
     bool operator!() const {
         return (size != 0);
     }
@@ -139,9 +126,7 @@ public:
     }
 };
 
-// =========================
 // Завдання 2.5. Email <-> ПІБ
-// =========================
 class PersonEmailMap {
 private:
     struct Entry {
@@ -154,14 +139,12 @@ private:
     int CodeError;
 
 public:
-    // Конструктор без параметрів
     PersonEmailMap() {
         data = nullptr;
         size = 0;
         CodeError = 0;
     }
 
-    // Конструктор з параметром
     PersonEmailMap(int n) {
         if (n > 0) {
             size = n;
@@ -174,7 +157,6 @@ public:
         }
     }
 
-    // Конструктор копіювання
     PersonEmailMap(const PersonEmailMap& other) {
         size = other.size;
         CodeError = other.CodeError;
@@ -189,7 +171,6 @@ public:
         }
     }
 
-    // Оператор присвоєння
     PersonEmailMap& operator=(const PersonEmailMap& other) {
         if (this != &other) {
             delete[] data;
@@ -208,12 +189,10 @@ public:
         return *this;
     }
 
-    // Деструктор
     ~PersonEmailMap() {
         delete[] data;
     }
 
-    // Створення набору асоціативних сутностей
     void createSet() {
         int n;
         cout << "Enter number of entries: ";
@@ -243,7 +222,6 @@ public:
         CodeError = 0;
     }
 
-    // Індексація []
     string operator[](const string& email) {
         for (int i = 0; i < size; i++) {
             if (data[i].email == email) {
@@ -329,9 +307,6 @@ void task3Placeholder() {
     cout << "Here you will add class/functions/menu for task 3.\n";
 }
 
-// =========================
-// Меню для Завдання 1
-// =========================
 void menuTask1() {
     int choice;
 
@@ -431,9 +406,6 @@ void menuTask1() {
     } while (choice != 0);
 }
 
-// =========================
-// Меню для Завдання 2
-// =========================
 void menuTask2() {
     PersonEmailMap directory;
     int choice;
@@ -487,9 +459,6 @@ void menuTask2() {
     } while (choice != 0);
 }
 
-// =========================
-// Головне меню
-// =========================
 int main() {
     int choice;
 
